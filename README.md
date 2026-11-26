@@ -48,4 +48,9 @@ Jika Health Point player habis sedangkan Health Point musuh masih tersisa, maka 
 
 ## Detail Teknis
 ----------------
-
+# main()
+tempat menjalankan semua program dan logikanya
+# makeCharacter()
+Menerima beberapa parameter dan mengembalikan dalam bentuk dictionary
+# showHP()
+Menampilkan Health Point saat ini dan maks dari player dan enemy. mengambil dari key dictionary ['hp'] dan ['max_hp']
