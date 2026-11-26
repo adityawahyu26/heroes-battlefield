@@ -10,7 +10,7 @@ Membuat keputusan yang benar dan mennghabiskan seluruh Health Point musuh untuk 
 ## Mekanisme Player
 -------------------
 # Membuat Karakter
-Pemain diminta untuk memasukkan nama karakternya atau menggunakan nama defaultnya (Kevin)
+Pemain diminta untuk memasukkan nama karakternya atau menggunakan nama defaultnya (Player)
 
 # Menampilkan Health Point
 Papan game akan secara realtime terus memperbarui status Health Point karakter maupun musuh secara berkala begitu selesai membuat keputusan
@@ -54,3 +54,5 @@ tempat menjalankan semua program dan logikanya
 Menerima beberapa parameter dan mengembalikan dalam bentuk dictionary
 # showHP()
 Menampilkan Health Point saat ini dan maks dari player dan enemy. mengambil dari key dictionary ['hp'] dan ['max_hp']
+# makeChoice()
+Meminta input dari user untuk melanjutkan aksi, return choice yang dipilih user
