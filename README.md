@@ -10,7 +10,7 @@ Membuat keputusan yang benar dan mennghabiskan seluruh Health Point musuh untuk 
 ## Mekanisme Player
 -------------------
 # Membuat Karakter
-Pemain diminta untuk memasukkan nama karakternya atau menggunakan nama defaultnya (Kevin)
+Pemain diminta untuk memasukkan nama karakternya atau menggunakan nama defaultnya (Player)
 
 # Menampilkan Health Point
 Papan game akan secara realtime terus memperbarui status Health Point karakter maupun musuh secara berkala begitu selesai membuat keputusan
@@ -48,4 +48,19 @@ Jika Health Point player habis sedangkan Health Point musuh masih tersisa, maka 
 
 ## Detail Teknis
 ----------------
-
+# main()
+tempat menjalankan semua program dan logikanya
+# makeCharacter()
+Menerima beberapa parameter dan mengembalikan dalam bentuk dictionary
+# showHP()
+Menampilkan Health Point saat ini dan maks dari player dan enemy. mengambil dari key dictionary ['hp'] dan ['max_hp']
+# makeChoice()
+Meminta input dari user untuk melanjutkan aksi, return choice yang dipilih user
+# attack()
+Menerima parameter attacker dan target. Dengan random.radint() membuat int acak dari antara attacker['min_damage'] dan attacker['max_damage']. Kemudian mengurangi target['hp'] dengan max() dan int acak. Dimana max() memastikan int tidak sampai 0.
+# defend()
+Menerima parameter player. Dengan random.radint() membuat int acak. Kemudian memulihkan player['hp'] ditambah dengan int acak menggunakan min(). Dimana min() memastikan int tidak melebihi player['max_hp']
+# GAME WIN
+Jika player['hp'] > 0 dan enemy['hp'] == 0. Maka player memenangkan pertandingan
+# GAME OVER
+Jika player['hp'] == 0 dan enemy['hp'] > 0. Maka player kalah dalam pertandingan
