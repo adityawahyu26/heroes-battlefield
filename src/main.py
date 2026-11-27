@@ -2,6 +2,13 @@ import os
 import time
 import random
 
+# variasi musuh dan kemampuannya
+monsters = [
+    {"name":"Guard","hp":80,"min_damage":4,"max_damage":13},
+    {"name":"Spectator","hp":95,"min_damage":7,"max_damage":15},
+    {"name":"Commander","hp":110,"min_damage":9,"max_damage":17},
+]
+
 # membuat karakter
 def makeCharacter(name, hp, min_damage, max_damage):
     return {
@@ -49,7 +56,14 @@ def main():
 
     # input data player dan enemy
     player = makeCharacter(username, hp=100, min_damage=8, max_damage=18)
-    enemy = makeCharacter(name="Abyss", hp=100, min_damage=7, max_damage=15)
+    # mengacak data enemy dari list
+    enemy_list = random.choice(monsters)
+    enemy = makeCharacter(
+        enemy_list['name'], 
+        enemy_list['hp'], 
+        enemy_list['min_damage'], 
+        enemy_list['max_damage'],
+        )
 
     os.system('cls')
     print(f"\n{player['name']} akan menghadapi {enemy['name']}!")
@@ -87,9 +101,9 @@ def main():
         time.sleep(3)
     
     if player['hp'] > 0 and enemy['hp'] == 0:
-        print("\nGAME WIN! Selamat atas kemenangannya!") 
+        print(f"\nGAME WIN!\n{player['name']} berhasil menang!") 
     else:
-        print("\nGAME OVER! Silahkan coba lagi!")
+        print(f"\nGAME OVER!\n{player['name']} dikalahkan dan {enemy['name']} menang!")
 
 if __name__ == "__main__":
     main()
